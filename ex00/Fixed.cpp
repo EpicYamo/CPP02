@@ -6,14 +6,14 @@
 /*   By: aaycan <aaycan@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/01 02:49:58 by aaycan            #+#    #+#             */
-/*   Updated: 2026/04/01 04:23:27 by aaycan           ###   ########.fr       */
+/*   Updated: 2026/04/01 05:02:15 by aaycan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 #include <iostream>
 
-Fixed::Fixed()
+Fixed::Fixed(void)
 {
 	std::cout << "Default constructor called" << std::endl;
 	this->_value = 0;
@@ -25,7 +25,7 @@ Fixed::Fixed(Fixed const &input)
 	this->_value = input.getRawBits();
 }
 
-Fixed::~Fixed()
+Fixed::~Fixed(void)
 {
 	std::cout << "Destructor called" << std::endl;
 }

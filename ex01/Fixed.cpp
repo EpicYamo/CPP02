@@ -6,14 +6,14 @@
 /*   By: aaycan <aaycan@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/01 02:49:58 by aaycan            #+#    #+#             */
-/*   Updated: 2026/04/01 04:38:45 by aaycan           ###   ########.fr       */
+/*   Updated: 2026/04/01 05:01:59 by aaycan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 #include <cmath>
 
-Fixed::Fixed()
+Fixed::Fixed(void)
 {
 	std::cout << "Default constructor called" << std::endl;
 	this->_value = 0;
@@ -37,7 +37,7 @@ Fixed::Fixed(float const input)
 	this->_value = (int)roundf(input * (1 << this->_digits));
 }
 
-Fixed::~Fixed()
+Fixed::~Fixed(void)
 {
 	std::cout << "Destructor called" << std::endl;
 }
