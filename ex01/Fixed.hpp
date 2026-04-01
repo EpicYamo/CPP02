@@ -6,12 +6,13 @@
 /*   By: aaycan <aaycan@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/01 02:50:00 by aaycan            #+#    #+#             */
-/*   Updated: 2026/04/01 04:08:49 by aaycan           ###   ########.fr       */
+/*   Updated: 2026/04/01 04:09:38 by aaycan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FIXED_H
 # define FIXED_H
+# include <iostream>
 
 class Fixed
 {
@@ -22,10 +23,16 @@ class Fixed
 		Fixed(void);
 		Fixed(Fixed const &input);
 		~Fixed(void);
+		Fixed(int const input);
+		Fixed(float const input);
 
 		Fixed &operator=(Fixed const &input);
-		int	getRawBits(void)const;
+		int getRawBits(void)const;
 		void setRawBits(int const raw);	
+		float toFloat(void) const;
+		int toInt(void) const;
 };
+
+std::ostream &operator<<(Fixed const &input, std::ostream &out);
 
 #endif

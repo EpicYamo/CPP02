@@ -6,12 +6,11 @@
 /*   By: aaycan <aaycan@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/01 02:49:58 by aaycan            #+#    #+#             */
-/*   Updated: 2026/04/01 04:23:27 by aaycan           ###   ########.fr       */
+/*   Updated: 2026/04/01 04:21:31 by aaycan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
-#include <iostream>
 
 Fixed::Fixed()
 {
@@ -39,12 +38,10 @@ Fixed &Fixed::operator=(Fixed const &input)
 
 int Fixed::getRawBits(void) const
 {
-	std::cout << "getRawBits member function called" << std::endl;
 	return (this->_value);
 }
 
 void Fixed::setRawBits(int const raw)
 {
-	std::cout << "setRawBits member function called" << std::endl;
 	this->_value = raw;
 }

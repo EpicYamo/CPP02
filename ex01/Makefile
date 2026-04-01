@@ -1,5 +1,5 @@
 NAME		:= the_fixed_point_numbers
-SRCS		:= main.cpp
+SRCS		:= main.cpp Fixed.cpp
 OBJS		:= $(SRCS:.cpp=.o)
 CPP			:= c++
 CPPFLAGS	:= -Wall -Wextra -Werror -std=c++98 -pedantic
