@@ -6,7 +6,7 @@
 /*   By: aaycan <aaycan@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/01 02:50:00 by aaycan            #+#    #+#             */
-/*   Updated: 2026/04/01 04:09:38 by aaycan           ###   ########.fr       */
+/*   Updated: 2026/04/01 04:30:14 by aaycan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,6 @@ class Fixed
 		int toInt(void) const;
 };
 
-std::ostream &operator<<(Fixed const &input, std::ostream &out);
+std::ostream &operator<<(std::ostream &out, Fixed const &input);
 
 #endif

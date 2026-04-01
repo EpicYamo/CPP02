@@ -6,11 +6,12 @@
 /*   By: aaycan <aaycan@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/01 02:49:58 by aaycan            #+#    #+#             */
-/*   Updated: 2026/04/01 04:21:31 by aaycan           ###   ########.fr       */
+/*   Updated: 2026/04/01 04:38:45 by aaycan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
+#include <cmath>
 
 Fixed::Fixed()
 {
@@ -22,6 +23,18 @@ Fixed::Fixed(Fixed const &input)
 {
 	std::cout << "Copy constructor called" << std::endl;
 	this->_value = input.getRawBits();
+}
+
+Fixed::Fixed(int const input)
+{
+	std::cout << "Int constructor called" << std::endl;
+	this->_value = input << this->_digits;
+}
+
+Fixed::Fixed(float const input)
+{
+	std::cout << "Float constructor called" << std::endl;
+	this->_value = (int)roundf(input * (1 << this->_digits));
 }
 
 Fixed::~Fixed()
@@ -44,4 +57,20 @@ int Fixed::getRawBits(void) const
 void Fixed::setRawBits(int const raw)
 {
 	this->_value = raw;
+}
+
+float Fixed::toFloat(void) const
+{
+	return ((float)this->_value / (1 << this->_digits));
+}
+
+int Fixed::toInt(void) const
+{
+	return (this->_value >> this->_digits);
+}
+
+std::ostream &operator<<(std::ostream &out, Fixed const &input)
+{
+	out << input.toFloat();
+	return (out);
 }
